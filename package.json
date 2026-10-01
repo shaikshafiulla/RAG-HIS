@@ -1,0 +1,13 @@
+{
+  "name": "tariff-rag",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "ingest": "node ingest.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.13.0"
+  }
+}

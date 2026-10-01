@@ -1,0 +1,51 @@
+organization,service,rate
+Star Health,MRI Brain Plain,6500
+Star Health,CT Scan Abdomen,4200
+Star Health,Complete Blood Picture (CBP),450
+Star Health,ECG,300
+Star Health,General Ward Bed Charges (per day),2500
+Star Health,X-Ray Chest PA View,450
+Star Health,Ultrasound Abdomen,1500
+Star Health,Lipid Profile,700
+Star Health,Doctor Consultation (OPD),600
+Star Health,ICU Bed Charges (per day),8000
+HDFC Ergo,MRI Brain Plain,6200
+HDFC Ergo,CT Scan Abdomen,4000
+HDFC Ergo,Complete Blood Picture (CBP),420
+HDFC Ergo,ECG,280
+HDFC Ergo,General Ward Bed Charges (per day),2400
+HDFC Ergo,X-Ray Chest PA View,420
+HDFC Ergo,Ultrasound Abdomen,1400
+HDFC Ergo,Lipid Profile,650
+HDFC Ergo,Doctor Consultation (OPD),550
+HDFC Ergo,ICU Bed Charges (per day),7500
+ICICI Lombard,MRI Brain Plain,6300
+ICICI Lombard,CT Scan Abdomen,4100
+ICICI Lombard,Complete Blood Picture (CBP),430
+ICICI Lombard,ECG,290
+ICICI Lombard,General Ward Bed Charges (per day),2450
+ICICI Lombard,X-Ray Chest PA View,430
+ICICI Lombard,Ultrasound Abdomen,1450
+ICICI Lombard,Lipid Profile,680
+ICICI Lombard,Doctor Consultation (OPD),580
+ICICI Lombard,ICU Bed Charges (per day),7800
+CGHS,MRI Brain Plain,4500
+CGHS,CT Scan Abdomen,3000
+CGHS,Complete Blood Picture (CBP),250
+CGHS,ECG,180
+CGHS,General Ward Bed Charges (per day),1500
+CGHS,X-Ray Chest PA View,250
+CGHS,Ultrasound Abdomen,900
+CGHS,Lipid Profile,400
+CGHS,Doctor Consultation (OPD),350
+CGHS,ICU Bed Charges (per day),5000
+Cash,MRI Brain Plain,7200
+Cash,CT Scan Abdomen,4800
+Cash,Complete Blood Picture (CBP),500
+Cash,ECG,350
+Cash,General Ward Bed Charges (per day),3000
+Cash,X-Ray Chest PA View,550
+Cash,Ultrasound Abdomen,1800
+Cash,Lipid Profile,800
+Cash,Doctor Consultation (OPD),700
+Cash,ICU Bed Charges (per day),9500

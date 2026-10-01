@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tariff Assistant</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; }
+    input { width: 100%; padding: 10px; font-size: 16px; box-sizing: border-box; }
+    button { margin-top: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    #answer { margin-top: 24px; font-size: 18px; }
+    #sources { margin-top: 16px; color: #666; font-size: 14px; white-space: pre-line; }
+  </style>
+</head>
+<body>
+  <h2>Tariff Assistant</h2>
+  <input id="q" placeholder="e.g. What is the brain MRI rate for Star Health?" />
+  <button id="ask">Ask</button>
+  <div id="answer"></div>
+  <div id="sources"></div>
+  <script>
+    const qInput = document.getElementById('q');
+    const askBtn = document.getElementById('ask');
+    const answerEl = document.getElementById('answer');
+    const sourcesEl = document.getElementById('sources');
+
+    async function ask() {
+      const question = qInput.value.trim();
+      if (!question) return;
+      askBtn.disabled = true;
+      answerEl.textContent = 'Thinking... (the first answer can take up to a minute)';
+      sourcesEl.textContent = '';
+      try {
+        const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question }),
+        });
+        const data = await res.json();
+        answerEl.textContent = data.answer || data.error;
+        // Show the rows the answer came from (textContent = shown as plain text, never as HTML)
+        if (data.sources) {
+          sourcesEl.textContent = 'Matched rows:\n' + data.sources.join('\n');
+        }
+      } catch (err) {
+        answerEl.textContent = 'Could not reach the server. Is "docker compose up" running?';
+      } finally {
+        askBtn.disabled = false;
+      }
+    }
+    askBtn.addEventListener('click', ask);
+    qInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') ask(); });
+  </script>
+</body>
+</html>
